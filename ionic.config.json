@@ -1,0 +1,8 @@
+{
+  "name": "Royal-estates",
+  "app_id": "4d77c69b",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
