@@ -1,0 +1,70 @@
+<!--
+  Generated template for the SimilarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar primary>
+    
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment secondary [(ngModel)]="regionFilter" (ionChange)="filterType()">
+        <ion-segment-button value="region">
+            Region
+        </ion-segment-button>
+        <ion-segment-button value="all">
+            All
+        </ion-segment-button>
+    </ion-segment>
+    
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    
+        <ion-card>
+            <ion-card-content>
+        <ion-item>
+        <ion-label>Filter By Type:
+        <select [(ngModel)]="kindFilter" (change)="filterType()" [(disabled)]="!useDataFilter">
+            <option value="House">House</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Studio">Studio</option>
+        </select>
+        </ion-label>
+        <ion-toggle end-of [(ngModel)]="useDataFilter" (ionChange)="dataChanged()"></ion-toggle>
+        </ion-item>
+        </ion-card-content>
+        
+        </ion-card>
+    
+    
+    <ion-list [virtualScroll]="similarByType" [approxItemHeight]="'132px'" [headerFn]="getHeader">
+        <ion-item-divider color="secondary" *virtualHeader="let header">
+            {{header}}
+        </ion-item-divider>
+        
+            
+        <ion-item *virtualItem="let estate">
+            
+            <ion-thumbnail item-start>
+                    <img src={{estate.image}}>
+                  </ion-thumbnail>
+                  <h2 color ="primary">{{estate.refNumber}}</h2>
+                  <p>{{estate.type}}, bedrooms {{estate.bedrooms}}
+                    <br /><br />
+                     {{estate.address}}
+                  </p>
+                  <button ion-button clear item-end>View</button>
+            <ion-row>
+               
+            </ion-row>
+        </ion-item>
+    
+    </ion-list>
+
+    
+</ion-content>

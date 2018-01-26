@@ -1,0 +1,25 @@
+<!--
+  Generated template for the EstateHomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+      <ion-title>{{estate.refNumber}}</ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="goHome()">
+              <ion-icon name="home"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-tabs>
+    <ion-tab tabTitle="Overview" [root]="overviewTab" [rootParams]="{estate: estate}" tabIcon="globe"></ion-tab>
+    <ion-tab tabTitle="Similar" [root]="similarTab" [rootParams]="{estate: estate}" tabIcon="git-network"></ion-tab>
+    <ion-tab tabTitle="Map" [root]="mapTab" [rootParams]="{estate: estate}" tabIcon="map"></ion-tab>
+</ion-tabs>
