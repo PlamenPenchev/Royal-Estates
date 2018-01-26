@@ -57,7 +57,7 @@ export class OverviewPage {
             handler: () => {
               this.isFollowing = false;
               let toast = this.toastController.create({
-                message: "You have unfollowed this team!",
+                message: "You have unfollowed this Estate!",
                 duration: 2000,
                 position: "bottom"
               });
